@@ -13,7 +13,7 @@ const app = express();
 
 // Middleware
 app.use(cors()); 
-app.use(express.json()); // To parse JSON bodies
+app.use(express.json());
 
 // API Routes
 app.get('/', (req, res) => {

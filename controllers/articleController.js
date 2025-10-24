@@ -3,7 +3,7 @@ const { cloudinary } = require('../middleware/uploadMiddleware');
 
 const getArticles = async (req, res) => {
   const articles = await Article.find({}).sort({ createdAt: -1 });
-  res.json(articles);
+  res.status(200).json(articles);
 };
 
 

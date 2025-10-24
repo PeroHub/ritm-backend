@@ -4,7 +4,7 @@ const { cloudinary } = require('../middleware/uploadMiddleware');
 
 const getGalleryImages = async (req, res) => {
   const images = await Gallery.find({}).sort({ createdAt: -1 });
-  res.json(images);
+  res.status(200).json(images);
 };
 
 
