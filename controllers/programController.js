@@ -3,7 +3,7 @@ const Program = require('../models/Program');
 
 const getPrograms = async (req, res) => {
   const programs = await Program.find({}).sort({ createdAt: -1 });
-  res.json(programs);
+  res.status(200).json(programs);
 };
 
 

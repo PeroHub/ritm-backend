@@ -3,9 +3,7 @@ const Article = require('../models/Article');
 const Gallery = require('../models/Gallery');
 const Application = require('../models/Application');
 
-// @desc    Get dashboard statistics
-// @route   GET /api/dashboard/stats
-// @access  Private
+
 const getStats = async (req, res) => {
   try {
     const totalPrograms = await Program.countDocuments();
@@ -13,7 +11,7 @@ const getStats = async (req, res) => {
     const galleryImages = await Gallery.countDocuments();
     const newApplications = await Application.countDocuments(); // Simplified, can be filtered by date later
 
-    res.json({
+    res.status(200).json({
       totalPrograms,
       newsAndEvents,
       galleryImages,
